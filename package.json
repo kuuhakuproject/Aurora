@@ -1,0 +1,25 @@
+{
+  "name": "aurora-bot",
+  "version": "0.0.1-alpha",
+  "description": "A multi-purpose bot for Discord that was made to give you all-in-one in one bot",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node index.js"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.18.0",
+    "yarn": ">=1.22.0"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "discord-api-types": "^0.37.7",
+    "discord.js": "^14.3.0",
+    "mongoose": "^6.6.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
