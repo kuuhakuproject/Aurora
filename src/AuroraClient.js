@@ -9,7 +9,7 @@ export class AuroraClient extends Client {
   commandLoader() {
     readdirSync('src/commands').forEach((category) => {
       readdirSync(`src/commands/${category}`).forEach(async (commandFile) => {
-        const Command = await import(`./commands/${category}/${commandFile.split('.')[0]}`)
+        const Command = await import(`./commands/${category}/${commandFile}`)
         const command = new Command['default']()
         this.commands.set(command.name, command)
       })
@@ -18,7 +18,7 @@ export class AuroraClient extends Client {
   
   eventLoader() {
     readdirSync('src/listeners').forEach(async event => {
-      const listener = await import(`./listeners/${event.split('.')[0]}`)
+      const listener = await import(`./listeners/${event}`)
       super.on(listener.default.label, (...args) => {
         listener.default.execute(this, ...args)
       })

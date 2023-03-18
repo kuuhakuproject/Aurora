@@ -39,10 +39,11 @@ export class CommandContext {
   }
   
   parseEmoji(emoji) {
+    console.log(emoji)
     const e = emoji
-      .replace(/(<:)/, '')
-      .replace(/(<a:)/, '')
-      .replace(/(>)/, '')
+      .replace(/(<:)/g, '')
+      .replace(/(<a:)/g, '')
+      .replace(/(>)/g, '')
       .split(':')
 
     return {

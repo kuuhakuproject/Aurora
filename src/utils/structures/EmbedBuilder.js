@@ -20,7 +20,7 @@ export class MessageEmbed {
   }
   
   setDefaultColor(color) {
-    this.setColor(this.default_color(color))
+    this.setColor(this.default_color[color])
   }
   
   setDescription(description) {
