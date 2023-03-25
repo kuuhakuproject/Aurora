@@ -1,13 +1,13 @@
-import { Command, MessageEmbed } from '../../utils/structures/'
+import { Command, MessageEmbed } from '../../utils/structures/index.js'
 
 export default class PingCommand extends Command {
   constructor() {
     super({
       name: 'ping',
-      description: 'A test command.',
+      description: 'Shows to you my current ping and shard.',
       options: [{
         name: 'option',
-        description: 'Choose if you want to see the status of every shard',
+        description: 'Choose if you want to see the status of every shard.',
         type: 3,
         required: false,
         choices: [{
@@ -23,16 +23,15 @@ export default class PingCommand extends Command {
     switch(option?.value) {
       case 'shards': {
         ctx.reply(ctx.getBotEmoji('heatbeat_ping'), {
-          content: 'Testing',
+          content: `Testing`,
           ephemeral: true
         })
       }
-      break;
       default: {
         const embed = new MessageEmbed()
         embed.setDefaultColor('DEFAULT')
-        embed.setDescription(`${ctx.getBotEmoji('heatbeat_ping')} **Ping:** ${(ctx.client.ws.ping).toFixed(2)} ${ctx.getBotEmoji('computer')} **Shard:** ${ctx.client.shard.ids}/${ctx.client.shard.count}`)
-        ctx.reply({
+        embed.setDescription(`${ctx.getBotEmoji('heatbeat_ping')} **Ping:** ${(ctx.client.ws.ping).toFixed(2)}ms!\n${ctx.getEmoji('computer')} **Shard:** ${ctx.client.shard.ids}/${ctx.client.shard.count}`)
+        ctx.send({
           embeds: [embed.build()],
           ephemeral: true
         })
