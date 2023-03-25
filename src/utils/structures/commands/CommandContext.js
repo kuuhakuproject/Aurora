@@ -1,4 +1,4 @@
-import { Emoji } from '../EmojiListUtils'
+import { Emoji } from '../EmojiListUtils.js'
 export class CommandContext {
   constructor(client, interaction, database, args) {
     this.client = client
@@ -39,11 +39,10 @@ export class CommandContext {
   }
   
   parseEmoji(emoji) {
-    console.log(emoji)
     const e = emoji
-      .replace(/(<:)/g, '')
-      .replace(/(<a:)/g, '')
-      .replace(/(>)/g, '')
+      .replace(/(<:)/, '')
+      .replace(/(<a:)/, '')
+      .replace(/(>)/, '')
       .split(':')
 
     return {
