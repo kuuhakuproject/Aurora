@@ -17,7 +17,7 @@ export default {
     
     random_status(process.env.PRESENCE_COOLDOWN)
     client.commands.forEach((data) => {
-      client.application.commands.create(data)
+      client.application.commands.create(data.data)
     })
     console.log(`Everything sounds good! ${client.user.username} is now online!`)
   }
