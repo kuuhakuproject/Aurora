@@ -22,10 +22,10 @@ export default class PingCommand extends Command {
   }
 
   execute(ctx) {
-    const option = ctx.interaction.options.get('option')
+    const option = ctx.args.get('option')
     switch (option?.value) {
       case 'shards': {
-        ctx.reply(ctx.getBotEmoji('heatbeat_ping'), {
+        ctx.reply('heatbeat_ping', {
           content: `Testing`,
           ephemeral: true
         })

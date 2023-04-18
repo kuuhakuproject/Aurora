@@ -31,7 +31,7 @@ export class CommandContext {
     }
 
     this.interaction.reply({
-      content: (typeof content === 'string') ? `${emoji} | ${this.interaction.member.user.toString()} ${content}` : `${emoji} | ${this.interaction.member.user.toString()} ${content?.content}`,
+      content: (typeof content === 'string') ? `${this.getBotEmoji(emoji)} | ${this.interaction.member.user.toString()} ${content}` : `${this.getBotEmoji(emoji) } | ${this.interaction.member.user.toString()} ${content?.content}`,
       embeds: this.embeds,
       ephemeral: content?.ephemeral ?? false,
       files: content?.files ?? []

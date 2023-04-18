@@ -4,5 +4,7 @@ export const Emoji = {
   vps_ram: '<:vps_ram:1029214699079876608>',
   technologist: '🧑‍💻',
   default_calendar: '<:default_calendar:1029216063898001508>',
-  computer: '🖥️'
+  computer: '🖥️',
+  negative: '<:negative:1029211600277737492>',
+  ban_hammer: '<:ban_hammer:1029210752306905088>'
 }
