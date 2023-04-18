@@ -1,10 +1,13 @@
 export class Command {
-  constructor(data) {
-    this.name = data.name
-    this.description = data.description
-    this.dmPermission = data.dmPermission || false
-    this.type = data.type || 1
-    this.options = data.options || []
-    this.defaultMembersPermissions = data.permissions || []
+  constructor(it) {
+    this.data = {
+      name: it.data.name,
+      description: it.data.description,
+      dmPermission: false,
+      type: it.data.type || 1,
+      options: it.data.options || [],
+      defaultMembersPermissions: it.data.permissions || []
+    }
+    this.category = it.category
   }
 }
