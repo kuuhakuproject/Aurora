@@ -11,7 +11,7 @@ export class AuroraClient extends Client {
       readdirSync(`src/commands/${category}`).forEach(async (commandFile) => {
         const Command = await import(`./commands/${category}/${commandFile}`)
         const command = new Command['default']()
-        this.commands.set(command.name, command)
+        this.commands.set(command.data.name, command)
       })
     })
   }
