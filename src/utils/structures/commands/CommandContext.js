@@ -72,7 +72,5 @@ export class CommandContext {
       console.error('Unfortunately the user was not found.')
       return undefined
     }
-
-
   }
 }
