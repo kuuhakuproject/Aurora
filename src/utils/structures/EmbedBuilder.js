@@ -30,7 +30,7 @@ export class MessageEmbed {
   addField(name, value, inline = false) {
     this.fields.push({ name, value, inline })
   }
-  
+
   build() {
     return this
   }

@@ -5,7 +5,7 @@ export class AuroraClient extends Client {
     super(options)
     this.commands = new Collection()
   }
-  
+
   commandLoader() {
     readdirSync('src/commands').forEach((category) => {
       readdirSync(`src/commands/${category}`).forEach(async (commandFile) => {
@@ -15,7 +15,7 @@ export class AuroraClient extends Client {
       })
     })
   }
-  
+
   eventLoader() {
     readdirSync('src/listeners').forEach(async event => {
       const listener = await import(`./listeners/${event}`)
@@ -24,7 +24,7 @@ export class AuroraClient extends Client {
       })
     })
   }
-  
+
   start(token) {
     this.commandLoader()
     this.eventLoader()

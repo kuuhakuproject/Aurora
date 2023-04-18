@@ -9,7 +9,7 @@ export default class BotinfoCommand extends Command {
       category: 'utils'
     })
   }
-  
+
   execute(ctx) {
     const embed = new MessageEmbed()
     embed.setTitle('My informations')

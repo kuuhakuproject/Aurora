@@ -9,7 +9,7 @@ export default class HelpCommand extends Command {
       category: 'utils'
     })
   }
-  
+
   execute(ctx) {
     const command = ctx.client.application.commands.cache.map(command => `</${command.name}:${command.id}> | ${command.description}`)
     const embed = new MessageEmbed()
