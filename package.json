@@ -1,6 +1,6 @@
 {
   "name": "aurora-bot",
-  "version": "0.0.1-alpha",
+  "version": "0.1.1-alpha",
   "description": "A multi-purpose bot for Discord that was made to give you all-in-one in one bot",
   "main": "index.js",
   "type": "module",
