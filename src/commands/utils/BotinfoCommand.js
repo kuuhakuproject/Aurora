@@ -2,8 +2,11 @@ import { Command, MessageEmbed } from '../../utils/structures/index.js'
 export default class BotinfoCommand extends Command {
   constructor() {
     super({
-      name: 'botinfo',
-      description: 'Shows some information about me!'
+      data: {
+        name: 'botinfo',
+        description: 'Shows some information about me!'
+      },
+      category: 'utils'
     })
   }
   
