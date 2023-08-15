@@ -17,7 +17,7 @@
   "dependencies": {
     "chalk": "^5.3.0",
     "discord-api-types": "^0.37.53",
-    "discord.js": "^14.9.0",
+    "discord.js": "^14.12.1",
     "mongoose": "^7.4.3",
     "os": "^0.1.2"
   },
