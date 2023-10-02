@@ -6,6 +6,7 @@ export default class PingCommand extends Command {
       data: {
         name: 'ping',
         description: 'Shows to you my current ping and shard.',
+        permissions: undefined,
         options: [{
           name: 'option',
           description: 'Choose if you want to see the status of every shards',

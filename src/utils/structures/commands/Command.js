@@ -1,3 +1,15 @@
+import { PermissionFlagsBits } from 'discord.js'
+
+function check_permission(perm) {
+  if (typeof perm !== 'object' || perm === undefined) {
+    return null
+  } else {
+    let permissions = 0n
+    perm.forEach(p => permissions += PermissionFlagsBits[p])
+    return permissions
+  }
+}
+
 export class Command {
   constructor(it) {
     this.data = {
@@ -6,7 +18,7 @@ export class Command {
       dmPermission: false,
       type: it.data.type || 1,
       options: it.data.options || [],
-      defaultMembersPermissions: it.data.permissions || []
+      defaultMemberPermissions: check_permission(it.data.permissions)
     }
     this.category = it.category
   }

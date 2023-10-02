@@ -1,23 +1,24 @@
 import { Command, MessageEmbed } from '../../utils/structures/index.js'
 import { PermissionsBitField } from 'discord.js'
-export default class BanCommand extends Command {
+export default class UnbanCommand extends Command {
   constructor() {
     super({
       data: {
-        name: 'ban',
-        description: 'Bans some users from your server (It\'s support multi-user ban)!',
+        name: 'unban',
+        description: 'Unbans some users from your server (It\'s support multi-user unban)!',
         permissions: ['BanMembers'],
         options: [{
           name: 'user',
-          description: 'The users that will be punished!',
+          description: 'The users that will be unbanned!',
           type: 3,
           required: true
         },
         {
           name: 'reason',
-          description: 'The punishment\'s reason.',
+          description: 'The unban reason.',
           type: 3,
-          required: false
+          required: false,
+          maxLength: 100
         }
         ]
       },
@@ -29,12 +30,10 @@ export default class BanCommand extends Command {
     const member = await ctx.getUser(ctx.args.get('user')?.value, false)
     const reason = ctx.args.get('reason')?.value ?? 'Reason not specified.'
 
-    if (ctx.interaction.guild.members.cache.get(member.id)?.bannable) return ctx.reply('negative', 'I\'m sorry but you can\'t ban this user!')
-
-    ctx.interaction.guild.bans.create(member, {
-      reason
+    ctx.interaction.guild.bans.remove(member, {
+      reason: `Unbanned by ${ctx.interaction.author} | Reason: ${reason}`
     }).then((banInfo) => {
-      ctx.reply('ban_hammer', 'The user was successfully punished!')
-    })
+      ctx.reply('ban_hammer', 'The user was successfully unbanned!')
+    }).catch(() => ctx.reply('negative', 'I can\'t unban! They aren\'t banned.'))
   }
 }
