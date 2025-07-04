@@ -143,10 +143,15 @@ debug@4.x:
   dependencies:
     ms "2.1.2"
 
-discord-api-types@^0.37.114, discord-api-types@^0.37.119, discord-api-types@^0.37.120:
+discord-api-types@^0.37.114, discord-api-types@^0.37.119:
   version "0.37.120"
   resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.37.120.tgz#ad7209930509c4cee3efddbacc77a1b18cf66d34"
   integrity sha512-7xpNK0EiWjjDFp2nAhHXezE4OUWm7s1zhc/UXXN6hnFFU8dfoPHgV0Hx0RPiCa3ILRpdeh152icc68DGCyXYIw==
+
+discord-api-types@^0.38.15:
+  version "0.38.15"
+  resolved "https://registry.yarnpkg.com/discord-api-types/-/discord-api-types-0.38.15.tgz#5c5e14c7049fa974096cb8172d0ec29dc5f880a6"
+  integrity sha512-RX3skyRH7p6BlHOW62ztdnIc87+wv4TEJEURMir5k5BbRJ10wK1MCqFEO6USHTol3gkiHLE6wWoHhNQ2pqB4AA==
 
 discord.js@^14.18.0:
   version "14.18.0"
